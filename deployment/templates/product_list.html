@@ -1,0 +1,88 @@
+<html>
+<style>
+body {
+  background-image: url('https://d2d8wwwkmhfcva.cloudfront.net/2880x/d2guulkeunn7d8.cloudfront.net/assets/homepage/homepage_background_compressed-f86db4915ed64a3bdeab5e635ec9d995d63952f1d5e6b17031b49acd2c0f250e.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-size: 100% 100%;
+}
+.blurred-box{
+  position: relative;
+  width: 300px;
+  height: 350px;
+  top: calc(50% - 215px);
+  left: calc(50% - 150px);
+  background-color: white;
+  border-radius: 2px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.blurred-box:after{
+ content: '';
+ width: 300px;
+ height: 300px;
+ background: inherit; 
+ position: absolute;
+ left: -25px;
+ left position
+ right: 0;
+ top: -25px;  
+ top position 
+ bottom: 0;
+ box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
+ filter: blur(10px);
+}
+.user-login-box{
+  position: relative;
+  margin-top: 5px;
+  text-align: center;
+  z-index: 1;
+}
+.user-login-box > *{
+  display: inline-block;
+  width: 200px;
+}
+
+.user-icon{
+	margin-left: 20px;
+	margin-bottom: 10px;
+  width: 300px;
+  height: 100px;
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('https://mms.businesswire.com/media/20210331005579/en/868438/5/instacart-logo-wordmark-4000x1600-e4f3c6f.jpg');
+}
+.submit{
+	cursor: pointer;
+	margin-top: 5px;
+	background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  border-radius: 3px;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+</style>
+<body>
+    <div class="blurred-box" style="overflow: auto;">
+		<div class="user-login-box">
+        <form action="/">
+        <input class="submit" type="submit" value="Back">
+        </form>
+        <span style="font-size: 16px; font-weight: bold;">Recommended Items</span>
+        {% for value in predictions %}
+          <button class ="submit" >{{value}}</button>
+        {% endfor %}
+	  	</div>
+	</div>
+  <script>
+function goBack() {
+  window.history.back();
+}
+</body>
+</html>
